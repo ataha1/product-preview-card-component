@@ -1,0 +1,134 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  font: inherit;
+}
+
+svg,
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+:root {
+  --ff-primary: "Montserrat", sans-serif;
+  --ff-secondary: "Fraunces", serif;
+
+  --fw-500: 500;
+  --fw-700: 700;
+
+  --clr-primary-dark-cyan-100: hsl(158, 36%, 37%);
+  --clr-primary-dark-cyan-200: hsl(158, 36%, 20%);
+  --clr-primary-cream: hsl(30, 38%, 92%);
+
+  --clr-neutral-dark-blue: hsl(212, 21%, 14%);
+  --clr-neutral-grayish-blue: hsl(228, 12%, 48%);
+  --clr-neutral-white: hsl(0, 0%, 100%);
+
+  --fs-50: 0.7rem;
+  --fs-100: 0.8rem;
+  --fs-200: 0.875rem;
+  --fs-300: 1.7rem;
+  --fs-400: 2rem;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-200);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: var(--clr-primary-cream);
+}
+
+.preview-card {
+  margin-inline: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 33rem;
+  background: var(--clr-neutral-white);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  height: auto;
+}
+
+.product-details {
+  display: grid;
+  align-content: start;
+  gap: 1.5rem;
+  padding: 1.7rem;
+  font-size: var(--fs-100);
+}
+
+.product-category {
+  color: var(--clr-neutral-grayish-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  line-height: 1;
+  font-size: var(--fs-50);
+}
+
+.title {
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-300);
+  color: var(--clr-neutral-dark-blue);
+  line-height: 1;
+}
+
+.product-description {
+  color: var(--clr-neutral-grayish-blue);
+  line-height: 1.5;
+}
+
+.price {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.price-after {
+  color: var(--clr-primary-dark-cyan-100);
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-300);
+}
+
+.price-before {
+  color: var(--clr-neutral-grayish-blue);
+  text-decoration: line-through;
+}
+
+.button {
+  background: var(--clr-primary-dark-cyan-100);
+  color: var(--clr-neutral-white);
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--clr-primary-dark-cyan-200);
+}
+
+.mobile-product-image {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .preview-card {
+    grid-template-columns: 1fr;
+  }
+  .desktop-product-image {
+    display: none;
+  }
+  .mobile-product-image {
+    display: block;
+  }
+}
